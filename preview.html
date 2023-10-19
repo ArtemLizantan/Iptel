@@ -1,0 +1,250 @@
+    
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+<title>
+  Preview page
+</title>
+<!--             [if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE = edge"/>
+<![endif]             -->
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+<meta content="true" name="HandheldFriendly" />
+<meta content="width" name="MobileOptimized" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta name="keywords" />
+<meta name="description" />
+<!-- inject:favicons -->
+<!-- endinject:favicons -->
+
+<!-- inject:launch-screens -->
+<!-- endinject:launch-screens -->
+
+<!-- inject:manifest -->
+<link rel="icon" type="image/png" href="/favicons/favicon.png" /><link rel="manifest" href="manifest.json"/><link rel='apple-touch-startup-image' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)' href='launch-screens/splashscreen-1242x2688.png' /><link rel='apple-touch-startup-image' media='(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-828x1792.png' /><link rel='apple-touch-startup-image' media='(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)' href='launch-screens/splashscreen-1125x2436.png' /><link rel='apple-touch-startup-image' media='(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)' href='launch-screens/splashscreen-1242x2208.png' /><link rel='apple-touch-startup-image' media='(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-750x1334.png' /><link rel='apple-touch-startup-image' media='(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-640x1136.png' /><link rel='apple-touch-startup-image' media='(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-1620x2160.png' /><link rel='apple-touch-startup-image' media='(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-2048x2732.png' /><link rel='apple-touch-startup-image' media='(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-1668x2388.png' /><link rel='apple-touch-startup-image' media='(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-1668x2224.png' /><link rel='apple-touch-startup-image' media='(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2)' href='launch-screens/splashscreen-1536x2048.png' />
+<!-- endinject:manifest -->
+
+<!-- inject:font preload -->
+<!-- endinject -->
+<meta name="it-rating" content="it-rat-fa9ef9f8c2095cc94c5d33de60ee9bb3" />
+
+<link rel="stylesheet" href="css/app.min.css" as="style" />
+<!--             [if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+<![endif]             -->
+</head>
+<body class="preview-page">
+<div class="wrapper">
+  <!-- Header -->
+  
+  <!-- Content -->
+      <div class='container'>
+    <form action='#' method='POST' class='form'>
+  <div class='form__row'>
+    <div class='form__col'>
+      
+<div class="field cusstom-class is-required js-field"
+  data-type="name">
+  <div class="field__head">
+    <label for="text" class="field__title">Test field 1</label>
+      </div>
+  <div class="field__input-container">
+          <svg class="icon icon-email">
+        <use href="icon/icons/icons.svg#email" />
+      </svg>
+        <input
+      class="field__input js-input"
+      id="text"
+      type=""
+      name="text"
+      value=""
+      placeholder="Some plaholder"
+      
+    />
+  </div>
+      <span class="field__error js-error">Some error</span>
+  </div>
+    </div>
+  </div>
+</form>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  
+</div>
+
+<!-- Scripts -->
+      <div class="dev-menu">
+    <ul class="dev-menu-list">
+              <li class="dev-menu-item"><a class="dev-menu-link" href="./404.html">1.404</a></li>
+              <li class="dev-menu-item"><a class="dev-menu-link" href="./about.html">2.about</a></li>
+              <li class="dev-menu-item"><a class="dev-menu-link" href="./index.html">3.index</a></li>
+              <li class="dev-menu-item"><a class="dev-menu-link" href="./preview.html">4.preview</a></li>
+              <li class="dev-menu-item"><a class="dev-menu-link" href="./icon/stack/sprite.stack.html">5.sprite</a></li>
+          </ul>
+    <button class="dev-menu-toggler"><i></i></button>
+  </div>
+  <script>
+    const devMenu = document.querySelector('.dev-menu');
+const devMenuToggler = document.querySelector('.dev-menu-toggler');
+const devMenuList = document.querySelector('.dev-menu-list');
+const devMenuLinks = devMenu.querySelectorAll('.dev-menu-link');
+let activeDevMenuLink = null;
+
+devMenuLinks.length &&
+  devMenuLinks.forEach((link) => {
+    if (link.pathname === window.location.pathname) {
+      link.classList.add('active');
+      activeDevMenuLink = link;
+    } else if (window.location.pathname === '/' && link.pathname === '/index.html') {
+      link.classList.add('active');
+      activeDevMenuLink = link;
+    }
+  });
+
+devMenuToggler &&
+  devMenuToggler.addEventListener('click', () => {
+    if (!devMenu) return;
+    devMenu.classList.toggle('active');
+
+    if (activeDevMenuLink && devMenuList) {
+      devMenuList.scroll({
+        top: activeDevMenuLink.offsetTop - devMenuList.offsetHeight / 2,
+        behavior: 'smooth'
+      });
+    }
+  });
+
+window.addEventListener('click', (event) => {
+  if (!devMenu) return;
+  if (!devMenu.contains(event.target)) {
+    devMenu.classList.remove('active');
+  }
+});
+
+window.addEventListener('load', (event) => {
+  if (!devMenu) return;
+  devMenu.style.display = 'block';
+});
+  </script>
+  <style>
+    .dev-menu {
+  display: none;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 2vh;
+  z-index: 9999;
+  background-color: #fff;
+  border: 2px solid #000;
+  transform: translate(-100%);
+  transition: all 0.3s ease;
+}
+
+.dev-menu-list {
+  padding: 30px 15px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.dev-menu-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dev-menu-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dev-menu-list::-webkit-scrollbar-thumb {
+  background: #00000081;
+}
+
+.dev-menu-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.dev-menu-link {
+  color: #000;
+}
+
+.dev-menu-link {
+  transition: all 0.3s ease;
+}
+
+.dev-menu-link:hover,
+.dev-menu-link.active {
+  color: #ca66fb;
+}
+
+/* Toggler */
+.dev-menu-toggler {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 10px;
+  border: 2px solid #000;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.dev-menu-toggler i,
+.dev-menu-toggler:after,
+.dev-menu-toggler:before {
+  display: block;
+  width: 75%;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  transition: all 0.3s ease;
+}
+
+.dev-menu-toggler:after,
+.dev-menu-toggler:before {
+  content: '';
+}
+
+.dev-menu-toggler:hover {
+  opacity: 1;
+}
+
+/* Dev menu active state */
+.dev-menu.active {
+  transform: translateX(0);
+}
+
+.dev-menu.active .dev-menu-toggler {
+  transform: translateX(calc(-100% - 20px));
+  border-color: #f16063;
+  opacity: 1;
+}
+
+.dev-menu.active .dev-menu-toggler i,
+.dev-menu.active .dev-menu-toggler:before,
+.dev-menu.active .dev-menu-toggler:after {
+  background-color: #f16063;
+}
+
+.dev-menu:not(.active) .dev-menu-toggler:after {
+  top: calc(50% - 5px);
+}
+
+.dev-menu:not(.active) .dev-menu-toggler:before {
+  top: calc(50% + 5px);
+}
+  </style>
+
+  <script src="js/main.js"></script>
+<script src="service-worker.js"></script>
+
+</body>
+</html>
+
